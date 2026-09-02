@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="221.33333"
+   height="308"
+   viewBox="0 0 221.33333 308"
+   sodipodi:docname="expojuy26_isologotipo.eps"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="221.33333"
+       height="308"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <path
+       id="path1"
+       d="m 1169.7,1101.25 v 1202.38 h 483.05 V 1101.25 H 1169.7"
+       style="fill:#705db4;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,308)" />
+    <path
+       id="path2"
+       d="M 816.34,5.07813 C 559.133,5.07813 359.758,75.8633 218.184,217.438 76.6094,358.996 5.84766,547.582 5.84766,783.145 c 0,29.918 1.30468,60.785 3.875,92.582 H 494.68 c -1.715,-22.5 -2.559,-44.704 -2.559,-66.641 0,-116.707 27.567,-208.027 82.684,-273.953 55.117,-65.899 136.711,-98.875 244.761,-98.875 222.634,0 339.104,146.5 349.394,439.469 h 483.79 v -66.641 c 0,-255.035 -73.48,-452.785 -220.46,-593.285 C 1285.33,75.3281 1080.02,5.07813 816.34,5.07813"
+       style="fill:#be9bd4;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,308)" />
+    <path
+       id="path3"
+       d="M 9.72656,1101.25 H 819.566 V 1584.3 H 9.72656 v -483.05"
+       style="fill:#6d369d;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,308)" />
+    <path
+       id="path4"
+       d="M 9.72656,1820.58 H 819.566 v 483.05 H 9.72656 v -483.05"
+       style="fill:#4bc4d3;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       transform="matrix(0.13333333,0,0,-0.13333333,0,308)" />
+  </g>
+</svg>
