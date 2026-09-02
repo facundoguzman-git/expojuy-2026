@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpoJuy 2026 - Prototipo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#menuExpoJuy" data-bs-offset="100" tabindex="0">
+
+  <div class="bg-shapes-container" aria-hidden="true">
+  <span class="shape shape-cyan shape-rect"></span>
+  <span class="shape shape-purple-dark shape-square"></span>
+  <span class="shape shape-lilac shape-u"></span>
+  <span class="shape shape-purple shape-bar"></span>
+  <span class="shape shape-cyan shape-square"></span>
+  <span class="shape shape-lilac shape-rect"></span>
+  <span class="shape shape-purple-dark shape-u"></span>
+  <span class="shape shape-purple shape-square"></span>
+  <span class="shape shape-cyan shape-bar"></span>
+  <span class="shape shape-lilac shape-square"></span>
+  </div>
+  <!-- Header / Barra Superior -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg py-2">
+      <div class="container-fluid px-3 px-md-4">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center me-3" href="#inicio">
+          <svg class="site-logo" width="40" height="50" viewBox="0 0 100 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="5" width="40" height="26" rx="2" fill="#00AEC7" />
+            <rect x="5" y="39" width="40" height="26" rx="2" fill="#58008C" />
+            <rect x="53" y="5" width="28" height="60" rx="2" fill="#6A42B7" />
+            <path d="M 5,73 L 27,73 A 16,16 0 0,0 59,73 L 81,73 A 38,38 0 0,1 5,73 Z" fill="#B685F5" />
+          </svg>
+        </a>
+
+        <!-- Botón Hamburguesa Móvil -->
+        <button class="navbar-toggler hamburguesa-btn" type="button" data-bs-toggle="collapse" data-bs-target="#menuExpoJuy" aria-controls="menuExpoJuy" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 30 30">
+            <path stroke="#00AEC7" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2.5" d="M4 7h22M4 15h22M4 23h22"/>
+          </svg>
+        </button>
+
+        <!-- Menú Desplegable / Links -->
+        <div class="collapse navbar-collapse" id="menuExpoJuy">
+          <ul class="navbar-nav menu-navegacion mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a href="#inicio" class="nav-link nav-activo">Lorem Ipsum 1</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sobre-expojuy" class="nav-link">Lorem Ipsum 2</a>
+            </li>
+            <li class="nav-item">
+              <a href="#expositores" class="nav-link">Lorem Ipsum 3</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center">
+            <a href="#contacto" class="btn-inscribirse">Inscribirse</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="py-5">
+    <!-- Hero Section (Inicio) -->
+    <section id="inicio" class="hero-section py-5 mb-5 text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8 hero-content">
+            <h1 class="display-5 fw-bold mb-3">Lorem Ipsum Dolor Sit Amet</h1>
+            <p class="hero-description text-muted lead mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+            </p>
+            <div class="hero-image-placeholder border rounded p-5 d-flex align-items-center justify-content-center bg-light" style="min-height: 320px;">
+              <span>[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre ExpoJuy 2026 -->
+    <section id="sobre-expojuy" class="content-section my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <h2 class="fw-bold mb-2">Sobre ExpoJuy 2026</h2>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="carousel-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+              <span>[Futuro carrusel de imágenes / videos]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expositores -->
+    <section id="expositores" class="content-section my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <h2 class="fw-bold mb-2">Expositores</h2>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="block-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+              <span>[Futura grilla de expositores]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda de Actividades -->
+    <section id="agenda" class="content-section my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <h2 class="fw-bold mb-2">Agenda de Actividades</h2>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="block-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+              <span>[Futuro cronograma / agenda interactiva]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Noticias -->
+    <section id="noticias" class="content-section my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <h2 class="fw-bold mb-2">Noticias y Novedades</h2>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="block-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+              <span>[Tarjetas de novedades]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plano / Mapa del Predio -->
+    <section id="mapa" class="content-section my-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <h2 class="fw-bold mb-2">Mapa del Predio</h2>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="block-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light" style="min-height: 200px;">
+              <span>[Ubicación de stands y plano de la Ciudad Cultural]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Patrocinadores, FAQ, Contacto y Redes) -->
+  <footer class="site-footer bg-dark text-white py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3 footer-block" id="sponsors">
+          <h3 class="h5 fw-bold mb-3">Patrocinadores</h3>
+          <p class="text-secondary small">Lorem ipsum dolor sit amet (Logos de sponsors).</p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-block" id="preguntas-frecuentes">
+          <h3 class="h5 fw-bold mb-3">Preguntas Frecuentes</h3>
+          <p class="text-secondary small">Lorem ipsum dolor sit amet (Lista desplegable / FAQ).</p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-block" id="contacto">
+          <h3 class="h5 fw-bold mb-3">Contacto</h3>
+          <p class="text-secondary small">Lorem ipsum dolor sit amet (Formulario / Datos de contacto).</p>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3 footer-block" id="redes-sociales">
+          <h3 class="h5 fw-bold mb-3">Redes Sociales</h3>
+          <p class="text-secondary small">Lorem ipsum dolor sit amet (Enlaces e íconos).</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.menu-navegacion .nav-link');
+    const firstLink = navLinks[0];
+
+    // Marca el primero por defecto al ingresar
+    if (firstLink && window.scrollY < 100) {
+      firstLink.classList.add('nav-activo');
+    }
+
+    // Manejo de clic
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('nav-activo', 'active'));
+        this.classList.add('nav-activo');
+
+        // Cierre automático en móviles
+        const navbarCollapse = document.getElementById('menuExpoJuy');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse) bsCollapse.hide();
+        }
+      });
+    });
+
+    // Sincronización con el ScrollSpy de Bootstrap
+    window.addEventListener('activate.bs.scrollspy', (e) => {
+      navLinks.forEach(l => l.classList.remove('nav-activo'));
+      const activeLink = document.querySelector(`.menu-navegacion a[href="${e.relatedTarget}"]`);
+      if (activeLink) {
+        activeLink.classList.add('nav-activo');
+      }
+    });
+  });
+</script>
+
+</html>
+
