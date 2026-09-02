@@ -202,8 +202,8 @@ main {
   position: relative;
   overflow: visible;
   padding-top: 1rem !important;
-  padding-bottom: 1.5rem !important;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  padding-bottom: 2.5rem !important;
+  border-bottom: none !important; /* <-- Poné none !important para volar la raya */
 }
 
 .glow-sphere {
@@ -575,3 +575,152 @@ main {
     font-size: 0.68rem;
   }
 }
+/* ==========================================
+   SECCIÓN: SOBRE EXPOJUY - FONDO Y TRANSICIÓN
+   ========================================== */
+
+/* ==========================================
+   SECCIÓN: SOBRE EXPOJUY - FONDO Y TRANSICIÓN SUAVE
+   ========================================== */
+
+.sobre-expojuy-section {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0 3.5rem 0;
+  margin-top: -1px; /* Elimina cualquier pixel fantasma entre secciones */
+  
+  /* Probamos primero directo en assets/ y luego en assets/img/ por si acaso */
+  background-color: #dbeafe;
+  background-image: 
+    linear-gradient(to bottom, 
+      var(--color-bg-light) 0%, 
+      rgba(252, 252, 252, 0.6) 12%, 
+      rgba(252, 252, 252, 0.05) 30%, 
+      rgba(252, 252, 252, 0.05) 75%, 
+      var(--color-bg-light) 100%
+    ),
+    url('assets/bg-sobre-expojuy.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+/* Esfera difuminada para continuar con la estética del Hero */
+.sobre-glow-cyan {
+  position: absolute;
+  top: 15%;
+  right: -5%;
+  width: 420px;
+  height: 420px;
+  background: var(--color-cyan);
+  border-radius: 50%;
+  filter: blur(130px);
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.badge-sobre {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-purple);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(106, 66, 183, 0.35);
+  box-shadow: 0 2px 8px rgba(106, 66, 183, 0.1);
+}
+
+.lema-subtitulo {
+  color: var(--color-purple);
+  letter-spacing: 0.2px;
+}
+
+/* Carrusel */
+.sobre-carousel .carousel-inner {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.slide-banner {
+  min-height: 310px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.slide-bg-bioceanico {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(88, 0, 140, 0.85) 100%),
+              radial-gradient(circle at top right, var(--color-cyan) 0%, transparent 60%);
+}
+
+.slide-bg-mineria {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(0, 174, 199, 0.8) 100%),
+              radial-gradient(circle at bottom left, var(--color-purple) 0%, transparent 60%);
+}
+
+.slide-bg-negocios {
+  background: linear-gradient(135deg, rgba(88, 0, 140, 0.92) 0%, rgba(15, 23, 42, 0.85) 100%),
+              radial-gradient(circle at center, var(--color-purple) 0%, transparent 70%);
+}
+
+.slide-bg-cultura {
+  background: linear-gradient(135deg, rgba(106, 66, 183, 0.9) 0%, rgba(15, 23, 42, 0.88) 100%),
+              radial-gradient(circle at top left, var(--color-lilac) 0%, transparent 70%);
+}
+
+.slide-caption-box {
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-cyan);
+  background: rgba(0, 174, 199, 0.18);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(0, 174, 199, 0.4);
+}
+
+/* Tarjetas de pilares con efecto frosted glass sobre el celeste */
+.pilar-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pilar-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.pilar-card.pilar-cyan {
+  border: 1.5px solid rgba(0, 174, 199, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 174, 199, 0.12);
+}
+.pilar-card.pilar-cyan .pilar-icon { color: var(--color-cyan); }
+
+.pilar-card.pilar-purple {
+  border: 1.5px solid rgba(106, 66, 183, 0.45);
+  box-shadow: 0 6px 18px rgba(106, 66, 183, 0.12);
+}
+.pilar-card.pilar-purple .pilar-icon { color: var(--color-purple); }
+
+.pilar-card.pilar-lilac {
+  border: 1.5px solid rgba(182, 133, 245, 0.55);
+  box-shadow: 0 6px 18px rgba(182, 133, 245, 0.14);
+}
+.pilar-card.pilar-lilac .pilar-icon { color: var(--color-lilac); }

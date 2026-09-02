@@ -170,15 +170,137 @@
       </div>
     </section>
 
-    <section id="sobre-expojuy" class="content-section my-5">
-      <div class="container">
+<!-- SECCIÓN: SOBRE EXPOJUY CON TRANSICIÓN -->
+    <section id="sobre-expojuy" class="sobre-expojuy-section position-relative">
+      <!-- Glow ambiental decorativo -->
+      <div class="sobre-glow-cyan" aria-hidden="true"></div>
+
+      <div class="container py-5 position-relative z-1">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10">
-            <h2 class="fw-bold mb-2">Sobre ExpoJuy 2026</h2>
-            <p class="text-muted mb-4">Encuentro de vinculación estratégica para la industria, producción, minería, tecnología y comercio exterior.</p>
-            <div class="carousel-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light">
-              <span>[Carrusel visual de historia e impacto productivo]</span>
+
+            <!-- Encabezado de sección -->
+            <div class="text-center text-md-start mb-4">
+              <span class="badge-sobre mb-2 d-inline-block">Tradición, Innovación e Integración</span>
+              <h2 class="fw-bold mb-1">Sobre ExpoJuy 2026</h2>
+              <h3 class="h5 lema-subtitulo fw-bold mb-3">“Conectando países, creando oportunidades”</h3>
+              <p class="text-muted mb-0">
+                Organizada por la <strong>Cámara de Comercio Exterior de Jujuy</strong> en la Ciudad Cultural, la ExpoJuy es la muestra multisectorial más representativa del Norte Argentino. Un punto de encuentro neurálgico donde convergen la industria, la minería sustentable, la agroindustria, la tecnología y el comercio exterior.
+              </p>
             </div>
+
+            <!-- Carrusel Visual -->
+            <div id="carruselExpoJuy" class="carousel slide sobre-carousel mb-4" data-bs-ride="carousel" data-bs-interval="4500">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carruselExpoJuy" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Corredor Bioceánico"></button>
+                <button type="button" data-bs-target="#carruselExpoJuy" data-bs-slide-to="1" aria-label="Litio y Energía"></button>
+                <button type="button" data-bs-target="#carruselExpoJuy" data-bs-slide-to="2" aria-label="Rondas de Negocios"></button>
+                <button type="button" data-bs-target="#carruselExpoJuy" data-bs-slide-to="3" aria-label="Cultura y Gastronomía"></button>
+              </div>
+
+              <div class="carousel-inner rounded-4 shadow-sm">
+                <!-- Slide 1: Integración Regional -->
+                <div class="carousel-item active">
+                  <div class="slide-banner slide-bg-bioceanico d-flex align-items-end p-4 p-md-5">
+                    <div class="slide-caption-box">
+                      <span class="slide-tag">Integración Regional</span>
+                      <h4 class="fw-bold text-white mb-2">El Corredor Bioceánico en el Centro de la Escena</h4>
+                      <p class="text-white-50 mb-0 small">Jujuy se consolida como eje logístico clave del Cono Sur, estrechando vínculos comerciales con Chile, Paraguay, Brasil y Bolivia a través del Paso de Jama.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Minería & Transición Energética -->
+                <div class="carousel-item">
+                  <div class="slide-banner slide-bg-mineria d-flex align-items-end p-4 p-md-5">
+                    <div class="slide-caption-box">
+                      <span class="slide-tag">Producción Estratégica</span>
+                      <h4 class="fw-bold text-white mb-2">Minería Sustentable, Litio y Energías Limpias</h4>
+                      <p class="text-white-50 mb-0 small">Muestra de innovación técnica, proveedores locales y proyectos solares de vanguardia orientados a la transición energética global.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Rondas de Negocios -->
+                <div class="carousel-item">
+                  <div class="slide-banner slide-bg-negocios d-flex align-items-end p-4 p-md-5">
+                    <div class="slide-caption-box">
+                      <span class="slide-tag">Vinculación B2B</span>
+                      <h4 class="fw-bold text-white mb-2">Rondas de Negocios y Conferencias</h4>
+                      <p class="text-white-50 mb-0 small">Mesas de enlace comercial internacional donde pymes, inversores y delegaciones cierran convenios y alianzas de financiamiento.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 4: Cultura, Sabores y Familia -->
+                <div class="carousel-item">
+                  <div class="slide-banner slide-bg-cultura d-flex align-items-end p-4 p-md-5">
+                    <div class="slide-caption-box">
+                      <span class="slide-tag">Identidad Jujeña</span>
+                      <h4 class="fw-bold text-white mb-2">Patio Gastronómico, Muestras y Espectáculos</h4>
+                      <p class="text-white-50 mb-0 small">Todo el potencial de las cuatro regiones: cocina tradicional, artesanías locales, vinos de altura y shows en vivo para toda la comunidad.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controles -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carruselExpoJuy" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carruselExpoJuy" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+
+            <!-- Ejes Clave de la Expo -->
+            <div class="row g-3">
+              <div class="col-12 col-md-4">
+                <div class="pilar-card pilar-cyan p-3 h-100">
+                  <div class="pilar-icon mb-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="2" y1="12" x2="22" y2="12"></line>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                  </div>
+                  <h4 class="h6 fw-bold mb-1">Comercio Exterior</h4>
+                  <p class="text-muted small mb-0">Integración transfronteriza y proyección hacia los mercados del Pacífico y el Mercosur.</p>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4">
+                <div class="pilar-card pilar-purple p-3 h-100">
+                  <div class="pilar-icon mb-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m18 16 4-4-4-4"></path>
+                      <path d="m6 8-4 4 4 4"></path>
+                      <path d="m14.5 4-5 16"></path>
+                    </svg>
+                  </div>
+                  <h4 class="h6 fw-bold mb-1">Litio y Transición</h4>
+                  <p class="text-muted small mb-0">Cadena de valor minera sustentable, energía fotovoltaica y nuevas tecnologías limpias.</p>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4">
+                <div class="pilar-card pilar-lilac p-3 h-100">
+                  <div class="pilar-icon mb-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <h4 class="h6 fw-bold mb-1">Sinergia Productiva</h4>
+                  <p class="text-muted small mb-0">Agroindustria, economías regionales, emprendedurismo local y encuentro ciudadano.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
