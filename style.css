@@ -1,8 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+/* Tipografía Oficial ExpoJuy (Ambit) */
+@font-face {
+  font-family: 'Ambit';
+  src: url('assets/fonts/Ambit-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ambit';
+  src: url('assets/fonts/Ambit-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ambit';
+  src: url('assets/fonts/Ambit-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Variables de Identidad y Paleta */
 :root {
-  --font-family-base: 'Poppins', sans-serif;
+  --font-family-base: 'Ambit', 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-cyan: #00AEC7;
   --color-purple-dark: #58008C;
   --color-purple: #6A42B7;
@@ -20,10 +43,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Títulos: compactos, rellenos y pesados */
+/* Títulos: compactos, limpios y con peso visual */
 h1, h2, h3, .h1, .h2, .h3, .hero-title {
   font-family: var(--font-family-base);
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.5px;
   color: #0f172a;
@@ -62,7 +85,7 @@ p {
   color: #333333 !important;
   font-family: var(--font-family-base);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   padding: 8px 16px !important;
   position: relative;
   transition: all 0.2s ease-in-out;
@@ -101,7 +124,7 @@ p {
   width: 40% !important;
 }
 
-/* Botón Inscribirse sobrio con hover brillante */
+/* Botón Inscribirse */
 .btn-inscribirse,
 .btn-cta {
   display: inline-block;
@@ -109,11 +132,11 @@ p {
   border: 1px solid var(--color-cyan);
   color: #ffffff !important;
   font-family: var(--font-family-base);
-  font-weight: 600;
-  font-size: 0.88rem;
+  font-weight: 700;
+  font-size: 0.9rem;
   text-transform: none;
   letter-spacing: 0;
-  padding: 6px 16px;
+  padding: 7px 18px;
   border-radius: 9999px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0, 174, 199, 0.25);
@@ -130,7 +153,7 @@ p {
   box-shadow: 0 6px 16px rgba(0, 174, 199, 0.45);
 }
 
-/* Main y Hero transparente para dejar ver el fondo animado */
+/* Main y Hero */
 main,
 .hero-section {
   background-color: transparent !important;
@@ -148,7 +171,7 @@ main,
 }
 
 .hero-description {
-  font-size: 0.95rem;
+  font-size: 1rem;
   max-width: 580px;
   margin: 0 auto 2rem;
   line-height: 1.6;
@@ -156,7 +179,7 @@ main,
 
 /* Tarjetas translúcidas (Glassmorphism sutil) */
 .content-section {
-  background-color: rgba(255, 255, 255, 0.78) !important;
+  background-color: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 12px;
@@ -168,15 +191,15 @@ main,
 
 .content-section h2 {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .content-section p {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 
-/* Placeholders con transparencia controlada */
+/* Placeholders */
 .hero-image-placeholder,
 .carousel-placeholder,
 .block-placeholder {
@@ -185,7 +208,7 @@ main,
   justify-content: center;
   text-align: center;
   padding: 1rem;
-  background-color: rgba(248, 250, 252, 0.6) !important;
+  background-color: rgba(248, 250, 252, 0.65) !important;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1.5px dashed #cbd5e1 !important;
@@ -226,7 +249,7 @@ main,
   font-size: 0.85rem;
 }
 
-/* Partículas del fondo animadas por GPU */
+/* Partículas animadas de fondo */
 .bg-shapes-container {
   position: fixed;
   top: 0;
@@ -241,9 +264,9 @@ main,
 .shape {
   position: absolute;
   bottom: -120px;
-  opacity: 0.18;
+  opacity: 0.14;
   will-change: transform, opacity;
-  animation: floatUp 18s linear infinite;
+  animation: floatUp 22s linear infinite;
 }
 
 .shape-rect {
@@ -269,7 +292,7 @@ main,
   height: 30px;
   border-bottom-left-radius: 24px;
   border-bottom-right-radius: 24px;
-  border: 7px solid var(--color-lilac);
+  border: 6px solid var(--color-lilac);
   border-top: none;
   background: transparent !important;
 }
@@ -279,16 +302,16 @@ main,
 .shape-purple { background-color: var(--color-purple); }
 .shape-lilac { background-color: var(--color-lilac); }
 
-.shape:nth-child(1) { left: 8%;  animation-duration: 16s; animation-delay: 0s; }
-.shape:nth-child(2) { left: 18%; animation-duration: 22s; animation-delay: 3s; }
-.shape:nth-child(3) { left: 28%; animation-duration: 19s; animation-delay: 7s; }
-.shape:nth-child(4) { left: 42%; animation-duration: 25s; animation-delay: 1s; }
-.shape:nth-child(5) { left: 55%; animation-duration: 17s; animation-delay: 5s; }
-.shape:nth-child(6) { left: 66%; animation-duration: 21s; animation-delay: 2s; }
-.shape:nth-child(7) { left: 76%; animation-duration: 18s; animation-delay: 8s; }
-.shape:nth-child(8) { left: 85%; animation-duration: 24s; animation-delay: 4s; }
-.shape:nth-child(9) { left: 93%; animation-duration: 20s; animation-delay: 6s; }
-.shape:nth-child(10){ left: 50%; animation-duration: 23s; animation-delay: 10s; }
+.shape:nth-child(1) { left: 8%;  animation-duration: 20s; animation-delay: 0s; }
+.shape:nth-child(2) { left: 18%; animation-duration: 26s; animation-delay: 3s; }
+.shape:nth-child(3) { left: 28%; animation-duration: 23s; animation-delay: 7s; }
+.shape:nth-child(4) { left: 42%; animation-duration: 28s; animation-delay: 1s; }
+.shape:nth-child(5) { left: 55%; animation-duration: 21s; animation-delay: 5s; }
+.shape:nth-child(6) { left: 66%; animation-duration: 25s; animation-delay: 2s; }
+.shape:nth-child(7) { left: 76%; animation-duration: 22s; animation-delay: 8s; }
+.shape:nth-child(8) { left: 85%; animation-duration: 27s; animation-delay: 4s; }
+.shape:nth-child(9) { left: 93%; animation-duration: 24s; animation-delay: 6s; }
+.shape:nth-child(10){ left: 50%; animation-duration: 29s; animation-delay: 10s; }
 
 @keyframes floatUp {
   0% {
@@ -296,14 +319,22 @@ main,
     opacity: 0;
   }
   15% {
-    opacity: 0.22;
+    opacity: 0.16;
   }
   85% {
-    opacity: 0.22;
+    opacity: 0.16;
   }
   100% {
     transform: translateY(-115vh) rotate(360deg);
     opacity: 0;
+  }
+}
+
+/* Accesibilidad y Ahorro de Recursos */
+@media (prefers-reduced-motion: reduce) {
+  .shape {
+    animation: none !important;
+    display: none !important;
   }
 }
 
@@ -339,6 +370,21 @@ main,
 
   .content-section {
     padding: 1.5rem 1rem;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: #ffffff !important;
+  }
+
+  .hero-image-placeholder,
+  .carousel-placeholder,
+  .block-placeholder {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: #f8fafc !important;
+  }
+
+  /* Reduce elementos animados para fluidez en teléfonos */
+  .shape:nth-child(n+6) {
+    display: none !important;
   }
 }
-
