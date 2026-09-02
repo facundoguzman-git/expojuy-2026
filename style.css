@@ -219,13 +219,13 @@ main {
 
 .glow-cyan {
   background: var(--color-cyan);
-  top: -120px;
+  top: -260px;
   left: 5%;
 }
 
 .glow-purple {
   background: var(--color-purple);
-  top: -80px;
+  top: -220px;
   right: 5%;
 }
 
@@ -236,11 +236,11 @@ main {
     filter: blur(80px);
   }
   .glow-cyan {
-    top: -60px;
+    top: -140px;
     left: -10%;
   }
   .glow-purple {
-    top: -40px;
+    top: -120px;
     right: -10%;
   }
 }
@@ -588,21 +588,11 @@ main {
   overflow: hidden;
   padding: 4rem 0 3.5rem 0;
   margin-top: -1px; /* Elimina cualquier pixel fantasma entre secciones */
-  
-  /* Probamos primero directo en assets/ y luego en assets/img/ por si acaso */
-  background-color: #dbeafe;
-  background-image: 
-    linear-gradient(to bottom, 
-      var(--color-bg-light) 0%, 
-      rgba(252, 252, 252, 0.6) 12%, 
-      rgba(252, 252, 252, 0.05) 30%, 
-      rgba(252, 252, 252, 0.05) 75%, 
-      var(--color-bg-light) 100%
-    ),
-    url('assets/bg-sobre-expojuy.jpg');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+
+  /* Fondo simple, sin imagen: mismo tono base clarito que el Hero. No hace
+     falta ningún truco de transición acá: el glow del Hero (arriba en el
+     CSS) ya se apaga solo, con margen de sobra, antes de llegar a este borde. */
+  background-color: var(--color-bg-light);
 }
 
 /* Esfera difuminada para continuar con la estética del Hero */
