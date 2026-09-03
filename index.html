@@ -306,15 +306,129 @@
       </div>
     </section>
 
-    <section id="expositores" class="content-section my-5">
+    <section id="expositores" class="content-section expositores-section my-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-lg-10">
+
+            <span class="badge-sobre mb-2 d-inline-block">Directorio Oficial</span>
             <h2 class="fw-bold mb-2">Expositores</h2>
-            <p class="text-muted mb-4">Directorio de empresas, emprendedores e instituciones participantes con filtros por rubro.</p>
-            <div class="block-placeholder border rounded p-4 d-flex align-items-center justify-content-center bg-light">
-              <span>[Buscador interactivo y grilla de empresas expositoras]</span>
+            <p class="text-muted mb-4">Empresas, emprendedores e instituciones que participan de ExpoJuy 2026. Buscá por nombre o filtrá por rubro.</p>
+
+            <!-- Buscador -->
+            <div class="expositores-buscador mb-3">
+              <svg class="buscador-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="buscadorExpositores" class="form-control" placeholder="Buscar expositor por nombre...">
             </div>
+
+            <!-- Filtros por rubro -->
+            <div class="filtros-rubro mb-4" role="group" aria-label="Filtrar expositores por rubro">
+              <button type="button" class="filtro-rubro-btn active" data-rubro="todos">Todos</button>
+              <button type="button" class="filtro-rubro-btn" data-rubro="mineria">Minería y Litio</button>
+              <button type="button" class="filtro-rubro-btn" data-rubro="comercio">Comercio Exterior</button>
+              <button type="button" class="filtro-rubro-btn" data-rubro="agro">Agroindustria</button>
+              <button type="button" class="filtro-rubro-btn" data-rubro="industria">Industria y Tecnología</button>
+              <button type="button" class="filtro-rubro-btn" data-rubro="turismo">Turismo y Servicios</button>
+              <button type="button" class="filtro-rubro-btn" data-rubro="emprendedores">Emprendedores</button>
+            </div>
+
+            <!-- Grilla de expositores -->
+            <div class="row g-3" id="grillaExpositores">
+
+              <div class="col-12 col-sm-6 col-lg-4 expositor-item" data-rubro="mineria" data-nombre="litio norte s.a.">
+                <div class="expositor-card h-100 p-3">
+                  <div class="expositor-top d-flex align-items-center gap-3 mb-2">
+                    <div class="expositor-logo expositor-logo-cyan">LN</div>
+                    <div>
+                      <h3 class="expositor-nombre h6 fw-bold mb-1">Litio Norte S.A.</h3>
+                      <span class="expositor-rubro-badge rubro-mineria">Minería y Litio</span>
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">Extracción y procesamiento sustentable de litio para la transición energética. Ejemplo de ficha — reemplazar por expositor confirmado.</p>
+                  <a href="#" class="expositor-link">Ver perfil</a>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 expositor-item" data-rubro="comercio" data-nombre="corredor bioceánico logística">
+                <div class="expositor-card h-100 p-3">
+                  <div class="expositor-top d-flex align-items-center gap-3 mb-2">
+                    <div class="expositor-logo expositor-logo-purple-dark">CB</div>
+                    <div>
+                      <h3 class="expositor-nombre h6 fw-bold mb-1">Corredor Bioceánico Logística</h3>
+                      <span class="expositor-rubro-badge rubro-comercio">Comercio Exterior</span>
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">Servicios de comercio exterior y logística internacional vía el Paso de Jama. Ejemplo de ficha — reemplazar por expositor confirmado.</p>
+                  <a href="#" class="expositor-link">Ver perfil</a>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 expositor-item" data-rubro="agro" data-nombre="valle andino agroalimentos">
+                <div class="expositor-card h-100 p-3">
+                  <div class="expositor-top d-flex align-items-center gap-3 mb-2">
+                    <div class="expositor-logo expositor-logo-lilac">VA</div>
+                    <div>
+                      <h3 class="expositor-nombre h6 fw-bold mb-1">Valle Andino Agroalimentos</h3>
+                      <span class="expositor-rubro-badge rubro-agro">Agroindustria</span>
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">Producción y exportación de economías regionales del NOA. Ejemplo de ficha — reemplazar por expositor confirmado.</p>
+                  <a href="#" class="expositor-link">Ver perfil</a>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 expositor-item" data-rubro="industria" data-nombre="tecnojujuy soluciones">
+                <div class="expositor-card h-100 p-3">
+                  <div class="expositor-top d-flex align-items-center gap-3 mb-2">
+                    <div class="expositor-logo expositor-logo-cyan">TJ</div>
+                    <div>
+                      <h3 class="expositor-nombre h6 fw-bold mb-1">TecnoJujuy Soluciones</h3>
+                      <span class="expositor-rubro-badge rubro-industria">Industria y Tecnología</span>
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">Automatización industrial y software para pymes regionales. Ejemplo de ficha — reemplazar por expositor confirmado.</p>
+                  <a href="#" class="expositor-link">Ver perfil</a>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 expositor-item" data-rubro="turismo" data-nombre="quebrada experiencias">
+                <div class="expositor-card h-100 p-3">
+                  <div class="expositor-top d-flex align-items-center gap-3 mb-2">
+                    <div class="expositor-logo expositor-logo-purple-dark">QE</div>
+                    <div>
+                      <h3 class="expositor-nombre h6 fw-bold mb-1">Quebrada Experiencias</h3>
+                      <span class="expositor-rubro-badge rubro-turismo">Turismo y Servicios</span>
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">Turismo receptivo y experiencias culturales en la Quebrada de Humahuaca. Ejemplo de ficha — reemplazar por expositor confirmado.</p>
+                  <a href="#" class="expositor-link">Ver perfil</a>
+                </div>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 expositor-item" data-rubro="emprendedores" data-nombre="altura textil emprendimientos">
+                <div class="expositor-card h-100 p-3">
+                  <div class="expositor-top d-flex align-items-center gap-3 mb-2">
+                    <div class="expositor-logo expositor-logo-lilac">AT</div>
+                    <div>
+                      <h3 class="expositor-nombre h6 fw-bold mb-1">Altura Textil Emprendimientos</h3>
+                      <span class="expositor-rubro-badge rubro-emprendedores">Emprendedores</span>
+                    </div>
+                  </div>
+                  <p class="text-muted small mb-3">Diseño y confección artesanal con lana de camélidos andinos. Ejemplo de ficha — reemplazar por expositor confirmado.</p>
+                  <a href="#" class="expositor-link">Ver perfil</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Mensaje sin resultados -->
+            <div id="expositoresSinResultados" class="text-center text-muted py-5 d-none">
+              No se encontraron expositores con ese criterio de búsqueda.
+            </div>
+
           </div>
         </div>
       </div>
@@ -433,6 +547,43 @@
           activeLink.classList.add('nav-activo');
         }
       });
+
+      // --- Expositores: buscador + filtro por rubro ---
+      const inputBuscador = document.getElementById('buscadorExpositores');
+      const botonesFiltro = document.querySelectorAll('.filtro-rubro-btn');
+      const tarjetasExpositores = document.querySelectorAll('.expositor-item');
+      const sinResultados = document.getElementById('expositoresSinResultados');
+      let rubroActivo = 'todos';
+
+      function aplicarFiltroExpositores() {
+        const texto = (inputBuscador?.value || '').trim().toLowerCase();
+        let visibles = 0;
+
+        tarjetasExpositores.forEach(tarjeta => {
+          const coincideRubro = rubroActivo === 'todos' || tarjeta.dataset.rubro === rubroActivo;
+          const coincideTexto = !texto || tarjeta.dataset.nombre.includes(texto);
+          const mostrar = coincideRubro && coincideTexto;
+          tarjeta.classList.toggle('d-none', !mostrar);
+          if (mostrar) visibles++;
+        });
+
+        if (sinResultados) {
+          sinResultados.classList.toggle('d-none', visibles !== 0);
+        }
+      }
+
+      botonesFiltro.forEach(boton => {
+        boton.addEventListener('click', () => {
+          botonesFiltro.forEach(b => b.classList.remove('active'));
+          boton.classList.add('active');
+          rubroActivo = boton.dataset.rubro;
+          aplicarFiltroExpositores();
+        });
+      });
+
+      if (inputBuscador) {
+        inputBuscador.addEventListener('input', aplicarFiltroExpositores);
+      }
     });
   </script>
 </body>

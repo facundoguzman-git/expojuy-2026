@@ -714,3 +714,149 @@ main {
   box-shadow: 0 6px 18px rgba(182, 133, 245, 0.14);
 }
 .pilar-card.pilar-lilac .pilar-icon { color: var(--color-lilac); }
+
+/* ==========================================
+   SECCIÓN: EXPOSITORES
+   ========================================== */
+
+/* Buscador */
+.expositores-buscador {
+  position: relative;
+  max-width: 420px;
+}
+
+.expositores-buscador .buscador-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.expositores-buscador .form-control {
+  padding-left: 40px;
+  height: 44px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+}
+
+.expositores-buscador .form-control:focus {
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 0 0.2rem rgba(0, 174, 199, 0.15);
+}
+
+/* Filtros por rubro (pills) */
+.filtros-rubro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filtro-rubro-btn {
+  font-family: var(--font-family-base);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filtro-rubro-btn:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+}
+
+.filtro-rubro-btn.active {
+  background: var(--color-cyan);
+  border-color: var(--color-cyan);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 174, 199, 0.25);
+}
+
+/* Tarjeta de expositor */
+.expositor-card {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.expositor-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-cyan);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.expositor-logo {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.expositor-logo-cyan { background: var(--color-cyan); }
+.expositor-logo-purple-dark { background: var(--color-purple-dark); }
+.expositor-logo-lilac { background: var(--color-lilac); }
+
+.expositor-nombre {
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.expositor-rubro-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 2px 9px;
+  border-radius: 6px;
+}
+
+.rubro-mineria { background: rgba(0, 174, 199, 0.14); color: var(--color-cyan); }
+.rubro-comercio { background: rgba(88, 0, 140, 0.12); color: var(--color-purple-dark); }
+.rubro-agro { background: rgba(182, 133, 245, 0.18); color: var(--color-lilac); }
+.rubro-industria { background: rgba(0, 174, 199, 0.14); color: var(--color-cyan); }
+.rubro-turismo { background: rgba(88, 0, 140, 0.12); color: var(--color-purple-dark); }
+.rubro-emprendedores { background: rgba(182, 133, 245, 0.18); color: var(--color-lilac); }
+
+.expositor-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-purple);
+  text-decoration: none;
+}
+
+.expositor-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .filtros-rubro {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filtro-rubro-btn {
+    flex-shrink: 0;
+  }
+}
