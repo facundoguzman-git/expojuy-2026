@@ -848,6 +848,147 @@ main {
   text-decoration: underline;
 }
 
+/* Header de la sección: un glow contenido, lejos de los bordes, para no
+   repetir el problema de costura con secciones vecinas. */
+.expositores-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.expositores-header {
+  position: relative;
+}
+
+.expositores-section::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  right: 5%;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: var(--color-lilac);
+  opacity: 0.14;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.expositores-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Contador */
+.expositores-contador {
+  font-weight: 600;
+}
+
+.expositores-contador #contadorExpositores {
+  color: var(--color-purple);
+  font-weight: 800;
+}
+
+/* Filtros: acomodar el ícono junto al texto */
+.filtro-rubro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filtro-rubro-btn svg {
+  flex-shrink: 0;
+}
+
+/* Badge de rubro: ícono + texto en línea */
+.expositor-rubro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.expositor-rubro-badge svg {
+  flex-shrink: 0;
+}
+
+/* Acento de color arriba de cada tarjeta, según el rubro */
+.expositor-card {
+  border-top: 4px solid transparent;
+}
+
+.expositor-item[data-rubro="mineria"] .expositor-card,
+.expositor-item[data-rubro="industria"] .expositor-card { border-top-color: var(--color-cyan); }
+
+.expositor-item[data-rubro="comercio"] .expositor-card,
+.expositor-item[data-rubro="turismo"] .expositor-card { border-top-color: var(--color-purple-dark); }
+
+.expositor-item[data-rubro="agro"] .expositor-card,
+.expositor-item[data-rubro="emprendedores"] .expositor-card { border-top-color: var(--color-lilac); }
+
+/* Animación fade al filtrar, en vez de aparecer/desaparecer de golpe */
+.expositor-item {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.expositor-item.expositor-oculto {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* Tarjeta destacada */
+.expositor-destacado {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0, 174, 199, 0.08), rgba(106, 66, 183, 0.08));
+  border: 1.5px solid rgba(106, 66, 183, 0.25);
+  box-shadow: 0 10px 28px rgba(58, 12, 92, 0.08);
+}
+
+.destacado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-purple));
+  padding: 4px 12px;
+  border-radius: 9999px;
+  margin-bottom: 0.9rem;
+}
+
+.destacado-logo {
+  width: 64px;
+  height: 64px;
+  font-size: 1.1rem;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-destacado-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--color-purple);
+  padding: 9px 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-destacado-link:hover {
+  background: var(--color-purple-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .filtros-rubro {
     flex-wrap: nowrap;
@@ -858,5 +999,10 @@ main {
 
   .filtro-rubro-btn {
     flex-shrink: 0;
+  }
+
+  .expositores-section::after {
+    width: 240px;
+    height: 240px;
   }
 }
