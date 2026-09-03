@@ -667,10 +667,18 @@ main {
   max-width: 680px;
   position: relative;
   z-index: 2;
+  background: rgba(15, 23, 42, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .slide-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -681,6 +689,32 @@ main {
   border-radius: 6px;
   margin-bottom: 0.5rem;
   border: 1px solid rgba(0, 174, 199, 0.4);
+}
+
+.slide-tag svg {
+  flex-shrink: 0;
+}
+
+/* Indicadores del carrusel, a tono con la paleta en vez del default de Bootstrap */
+.sobre-carousel .carousel-indicators {
+  margin-bottom: 0.6rem;
+}
+
+.sobre-carousel .carousel-indicators [data-bs-target] {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  opacity: 1;
+  margin: 0 4px;
+  transition: all 0.25s ease;
+}
+
+.sobre-carousel .carousel-indicators .active {
+  width: 26px;
+  border-radius: 9999px;
+  background-color: var(--color-cyan);
 }
 
 /* Tarjetas de pilares con efecto frosted glass sobre el celeste */
@@ -697,23 +731,41 @@ main {
   background: rgba(255, 255, 255, 0.9);
 }
 
+/* Ícono con fondo circular, en vez de un trazo suelto */
+.pilar-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pilar-numero {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.1);
+  line-height: 1;
+}
+
 .pilar-card.pilar-cyan {
   border: 1.5px solid rgba(0, 174, 199, 0.5);
   box-shadow: 0 6px 18px rgba(0, 174, 199, 0.12);
 }
-.pilar-card.pilar-cyan .pilar-icon { color: var(--color-cyan); }
+.pilar-card.pilar-cyan .pilar-icon-badge { background: rgba(0, 174, 199, 0.14); color: var(--color-cyan); }
 
 .pilar-card.pilar-purple {
   border: 1.5px solid rgba(106, 66, 183, 0.45);
   box-shadow: 0 6px 18px rgba(106, 66, 183, 0.12);
 }
-.pilar-card.pilar-purple .pilar-icon { color: var(--color-purple); }
+.pilar-card.pilar-purple .pilar-icon-badge { background: rgba(106, 66, 183, 0.14); color: var(--color-purple); }
 
 .pilar-card.pilar-lilac {
   border: 1.5px solid rgba(182, 133, 245, 0.55);
   box-shadow: 0 6px 18px rgba(182, 133, 245, 0.14);
 }
-.pilar-card.pilar-lilac .pilar-icon { color: var(--color-lilac); }
+.pilar-card.pilar-lilac .pilar-icon-badge { background: rgba(182, 133, 245, 0.18); color: var(--color-lilac); }
 
 /* ==========================================
    SECCIÓN: EXPOSITORES
