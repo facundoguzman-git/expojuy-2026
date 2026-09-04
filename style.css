@@ -535,57 +535,13 @@ main {
   background-color: var(--color-cyan);
 }
 
-.pilar-card {
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-  box-shadow: 0 8px 30px rgba(106, 66, 183, 0.08);
+/* La caja de texto (slide-caption-box) tiene z-index:2 y arranca pegada al
+   borde izquierdo, tapando el área clickeable de la flecha "anterior"
+   (z-index:1 por defecto de Bootstrap). Subimos las flechas por encima. */
+.sobre-carousel .carousel-control-prev,
+.sobre-carousel .carousel-control-next {
+  z-index: 5;
 }
-
-.pilar-card:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.65);
-  border-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 12px 35px rgba(106, 66, 183, 0.15);
-}
-
-.pilar-icon-badge {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.pilar-numero {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: rgba(15, 23, 42, 0.1);
-  line-height: 1;
-}
-
-.pilar-card.pilar-cyan {
-  border: 1.5px solid rgba(0, 174, 199, 0.5);
-  box-shadow: 0 6px 18px rgba(0, 174, 199, 0.12);
-}
-.pilar-card.pilar-cyan .pilar-icon-badge { background: rgba(0, 174, 199, 0.14); color: var(--color-cyan); }
-
-.pilar-card.pilar-purple {
-  border: 1.5px solid rgba(106, 66, 183, 0.45);
-  box-shadow: 0 6px 18px rgba(106, 66, 183, 0.12);
-}
-.pilar-card.pilar-purple .pilar-icon-badge { background: rgba(106, 66, 183, 0.14); color: var(--color-purple); }
-
-.pilar-card.pilar-lilac {
-  border: 1.5px solid rgba(182, 133, 245, 0.55);
-  box-shadow: 0 6px 18px rgba(182, 133, 245, 0.14);
-}
-.pilar-card.pilar-lilac .pilar-icon-badge { background: rgba(182, 133, 245, 0.18); color: var(--color-lilac); }
 
 .expositores-section {
   position: relative;
@@ -856,65 +812,6 @@ section.expositores-section.content-section,
 .expositor-item.expositor-oculto {
   opacity: 0;
   transform: scale(0.96);
-}
-
-.expositor-destacado {
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 18px;
-  background: rgba(13, 56, 89, 0.7) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(0, 174, 199, 0.5);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-}
-
-.expositor-destacado h4,
-.expositor-destacado h5,
-.expositor-destacado p {
-  color: #ffffff !important;
-}
-
-.destacado-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  background: var(--color-cyan);
-  padding: 4px 12px;
-  border-radius: 9999px;
-  margin-bottom: 0.9rem;
-}
-
-.destacado-logo {
-  width: 64px;
-  height: 64px;
-  font-size: 1.1rem;
-  border: 3px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.btn-destacado-link {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #ffffff;
-  background: var(--color-cyan);
-  padding: 9px 20px;
-  border-radius: 9999px;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.btn-destacado-link:hover {
-  background: #0096ab;
-  color: #ffffff;
-  transform: translateY(-2px);
 }
 
 .expositores-section .badge-sobre {
