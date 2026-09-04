@@ -1,6 +1,3 @@
-/* =======================================================
-   FUENTES TIPOGRÁFICAS (AMBIT)
-   ======================================================= */
 @font-face {
   font-family: 'Ambit';
   src: url('assets/fonts/Ambit-Light.otf') format('opentype');
@@ -25,9 +22,6 @@
   font-display: swap;
 }
 
-/* =======================================================
-   VARIABLES GLOBALES Y ESTILOS BASE DEL SITIO
-   ======================================================= */
 :root {
   --font-family-base: 'Ambit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --color-cyan: #00AEC7;
@@ -65,9 +59,6 @@ main {
   background-color: transparent !important;
 }
 
-/* =======================================================
-   BARRA DE NAVEGACIÓN Y HEADER SUPERIOR
-   ======================================================= */
 .site-header {
   position: absolute !important;
   top: 0 !important;
@@ -149,9 +140,6 @@ main {
   }
 }
 
-/* =======================================================
-   SECCIÓN HERO PRINCIPAL
-   ======================================================= */
 .hero-section {
   position: relative;
   overflow: hidden;
@@ -163,98 +151,181 @@ main {
   margin-bottom: 1px !important;
 }
 
-.hero-center-container {
-  margin-top: 1.5rem;
+.hero-top-subtitle {
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.hero-shape {
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  will-change: transform;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.45));
+/* =======================================================
+   GALERÍA CURVA 3D - ESTILO PILARES ALINEADOS (7 TARJETAS)
+   ======================================================= */
+/* =======================================================
+   GALERÍA CURVA 3D - ESTILO PILARES ALINEADOS (7 TARJETAS)
+   ======================================================= */
+.curved-gallery-container {
+  perspective: 1400px;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.eva-svg {
+.curved-gallery-track {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  max-width: 1450px;
+}
+
+/* Tarjetas con tamaño idéntico para formar la línea de pilares uniforme */
+.curved-gallery-card {
+  flex: 0 0 165px;
+  height: 255px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  background-color: #0b0826;
+}
+
+.curved-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  overflow: visible;
-  width: 100%;
-  height: 100%;
 }
 
-.hero-shape-left {
-  left: -110px;
-  top: 52%;
-  transform: translateY(-40%);
-  width: 520px;
-  height: 480px;
-  animation: floatSoftLeft 12s ease-in-out infinite alternate;
-}
-
-.eva-triangle-badge {
+.gallery-card-label {
   position: absolute;
-  bottom: 25px;
-  right: -25px;
-  width: 175px;
-  height: 175px;
-  clip-path: polygon(100% 50%, 12% 0%, 12% 100%);
-  border-radius: 12px;
-  background-color: var(--color-cyan);
-  padding: 4px;
-  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
-}
-
-.eva-triangle-img {
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  clip-path: polygon(100% 50%, 12% 0%, 12% 100%);
+  padding: 8px 10px;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
 }
 
-.hero-shape-right {
-  right: -95px;
-  top: 40%;
-  transform: translateY(-50%);
-  width: 460px;
-  height: 570px;
-  animation: floatSoftRight 14s ease-in-out infinite alternate;
+.curved-gallery-card:nth-child(1) {
+  transform: rotateY(38deg) translateZ(-80px);
+  transform-origin: right center;
+  opacity: 0.75;
+}
+.curved-gallery-card:nth-child(2) {
+  transform: rotateY(26deg) translateZ(-40px);
+  transform-origin: right center;
+  opacity: 0.85;
+}
+.curved-gallery-card:nth-child(3) {
+  transform: rotateY(13deg) translateZ(-10px);
+  transform-origin: right center;
+  opacity: 0.95;
+}
+.curved-gallery-card:nth-child(4) {
+  z-index: 115;
+  opacity: 1;
+}
+.curved-gallery-card:nth-child(5) {
+  transform: rotateY(-13deg) translateZ(-10px);
+  transform-origin: left center;
+  opacity: 0.95;
+}
+.curved-gallery-card:nth-child(6) {
+  transform: rotateY(-26deg) translateZ(-40px);
+  transform-origin: left center;
+  opacity: 0.85;
+}
+.curved-gallery-card:nth-child(7) {
+  transform: rotateY(-38deg) translateZ(-80px);
+  transform-origin: left center;
+  opacity: 0.75;
 }
 
-.eva-border {
-  fill: none;
-  stroke-width: 1.5px;
-  opacity: 0.6;
+.curved-gallery-card:hover {
+  transform: translateY(-15px) rotateY(0deg) translateZ(30px) scale(1.05) !important;
+  box-shadow: 0 25px 50px rgba(88, 0, 140, 0.5);
+  border-color: var(--color-purple);
+  z-index: 10;
+  opacity: 1 !important;
 }
 
-.stroke-cyan {
-  stroke: var(--color-cyan);
+@media (min-width: 992px) {
+  .curved-gallery-card {
+    flex: 0 0 175px;
+  }
 }
 
-.stroke-purple {
-  stroke: var(--color-lilac);
-}
+/* =======================================================
+   ADAPTACIÓN COMPACTA PARA CELULARES (MÓVIL)
+   ======================================================= */
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto !important;
+    padding-top: 4.5rem !important;
+    padding-bottom: 2rem !important;
+    justify-content: space-between !important;
+  }
 
-@keyframes floatSoftLeft {
-  0% { transform: translateY(-40%) rotate(-1deg); }
-  100% { transform: translateY(-44%) rotate(1deg); }
-}
+  .hero-top-container {
+    padding-top: 0.5rem !important;
+    margin-bottom: 0rem !important;
+  }
 
-@keyframes floatSoftRight {
-  0% { transform: translateY(-50%) rotate(1deg); }
-  100% { transform: translateY(-46%) rotate(-1deg); }
-}
+  .brand-hero-box {
+    max-width: 280px !important;
+    margin-bottom: 0.25rem !important;
+  }
 
-@media (max-width: 1400px) {
-  .hero-shape-left { left: -120px; width: 400px; height: 400px; }
-  .eva-triangle-badge { width: 180px; height: 140px; right: -15px; }
-  .hero-shape-right { right: -120px; width: 400px; height: 350px; }
+  .hero-top-subtitle {
+    font-size: 0.7rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .curved-gallery-container {
+    padding: 0.25rem 0 !important;
+  }
+
+  .curved-gallery-track {
+    padding: 0.25rem 0.5rem !important;
+    gap: 0.35rem !important;
+  }
+
+  /* Achicamos las tarjetas en celular para que no queden gigantescas ni dejen espacio en el medio */
+  .curved-gallery-card {
+    flex: 0 0 110px !important;
+    height: 175px !important;
+  }
+
+  .hero-bottom-container {
+    padding-bottom: 0.5rem !important;
+    margin-top: 0rem !important;
+  }
+
+  .hero-date-text {
+    font-size: 2.2rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .hero-location-link {
+    font-size: 0.85rem !important;
+  }
 }
 
 .brand-hero-box {
   width: 100%;
-  max-width: 480px;
-  margin-bottom: 1.5rem !important;
+  max-width: 420px;
+  margin-bottom: 0.5rem !important;
 }
 
 .brand-hero-svg {
@@ -265,17 +336,17 @@ main {
 
 .hero-date-text {
   font-family: var(--font-family-base);
-  font-size: clamp(3rem, 5.5vw, 4.4rem);
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
   font-weight: 800;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
   color: #00AEC7;
   line-height: 1;
-  text-shadow: 0 4px 24px rgba(0, 174, 199, 0.4);
+  text-shadow: 0 2px 12px rgba(0, 174, 199, 0.2);
 }
 
 .hero-location-link {
   font-family: var(--font-family-base);
-  font-size: 1.12rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.8px;
   color: #cbd5e1;
@@ -300,9 +371,6 @@ main {
   transform: translateY(-2px);
 }
 
-/* =======================================================
-   SECCIÓN SOBRE EXPOJUY Y CARRUSEL DE PILARES
-   ======================================================= */
 .content-section {
   background-color: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(8px);
@@ -526,9 +594,6 @@ main {
 }
 .pilar-card.pilar-lilac .pilar-icon-badge { background: rgba(182, 133, 245, 0.18); color: var(--color-lilac); }
 
-/* =======================================================
-   SECCIÓN EXPOSITORES (DEGRADADO SUAVE Y LUMINOSO CONECTADO AL LILA)
-   ======================================================= */
 .expositores-section {
   position: relative;
   overflow: hidden;
@@ -641,9 +706,6 @@ section.expositores-section.content-section,
   gap: 0.5rem;
 }
 
-/* =======================================================
-   BOTONES DE FILTRO CON EL MISMO EFECTO DE ELEVACIÓN Y BRILLO
-   ======================================================= */
 .filtro-rubro-btn {
   font-family: var(--font-family-base);
   font-size: 0.8rem;
@@ -656,7 +718,6 @@ section.expositores-section.content-section,
   border-radius: 9999px;
   padding: 6px 16px;
   cursor: pointer;
-  /* Transición fluida idéntica a las cards */
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
@@ -669,7 +730,6 @@ section.expositores-section.content-section,
 }
 
 .filtro-rubro-btn:hover {
-  /* Mantiene el fondo, eleva el botón y saca el contorno clarito suave */
   background: rgba(13, 56, 89, 0.55) !important;
   border-color: rgba(150, 225, 245, 0.45) !important;
   box-shadow: 0 8px 25px rgba(5, 20, 35, 0.35);
@@ -685,12 +745,8 @@ section.expositores-section.content-section,
   transform: translateY(-1px);
 }
 
-/* =======================================================
-   TARJETAS DE EXPOSITORES ACHATADAS Y CON EFECTO SUAVE
-   ======================================================= */
 .expositor-card {
   height: 100%;
-  /* Achicamos el padding vertical para que queden más compactas / achatadas */
   padding: 1.1rem 1.25rem !important;
   background: rgba(13, 56, 89, 0.65) !important;
   backdrop-filter: blur(16px);
@@ -718,8 +774,8 @@ section.expositores-section.content-section,
 }
 
 .expositor-card p {
-  font-size: 0.82rem !important; /* Letras un poco más compactas */
-  margin-bottom: 0.75rem !important; /* Menos espacio libre antes del botón */
+  font-size: 0.82rem !important;
+  margin-bottom: 0.75rem !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
@@ -728,7 +784,7 @@ section.expositores-section.content-section,
 }
 
 .expositor-card .expositor-top {
-  margin-bottom: 0.5rem !important; /* Acerca el logo al título */
+  margin-bottom: 0.5rem !important;
 }
 
 .expositor-logo {
@@ -874,9 +930,7 @@ section.expositores-section.content-section,
   border: 1px solid rgba(0, 174, 199, 0.4);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
-/* =======================================================
-   SECCIÓN CRONOGRAMA / ACTIVIDADES POR DÍA
-   ======================================================= */
+
 .activities-section {
   background: linear-gradient(145deg, #b886e8 0%, #9a52d4 50%, #6822a3 100%);
   position: relative;
@@ -1018,9 +1072,6 @@ section.expositores-section.content-section,
   margin-bottom: 0;
 }
 
-/* =======================================================
-   SECCIÓN PLANO DEL PREDIO / UBICACIÓN
-   ======================================================= */
 .predio-section {
   background-color: #ffffff;
   position: relative;
@@ -1104,9 +1155,6 @@ section.expositores-section.content-section,
   box-shadow: 0 6px 20px rgba(0, 174, 199, 0.4);
 }
 
-/* =======================================================
-   RESPONSIVE MEDIA QUERIES GENERALES
-   ======================================================= */
 @media (max-width: 991px) {
   .site-header {
     position: absolute !important;
@@ -1158,9 +1206,5 @@ section.expositores-section.content-section,
   }
   .filtro-rubro-btn {
     flex-shrink: 0;
-  }
-  .expositores-section::after {
-    width: 240px;
-    height: 240px;
   }
 }
