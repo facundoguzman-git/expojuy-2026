@@ -1098,3 +1098,195 @@ section.expositores-section.content-section,
     flex-shrink: 0;
   }
 }
+
+/* =======================================================
+   MODAL: PERFIL DE EXPOSITOR
+   ======================================================= */
+.modal-expositor-dialog {
+  max-width: 580px;
+}
+
+.expositor-modal-content {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(38px) saturate(220%);
+  -webkit-backdrop-filter: blur(38px) saturate(220%);
+  box-shadow:
+    0 30px 70px rgba(15, 23, 42, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 0 60px rgba(255, 255, 255, 0.12);
+}
+
+/* Reflejos de color (cyan/violeta) típicos del efecto "liquid glass",
+   flotando detrás del contenido sin taparlo. */
+.expositor-modal-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% -10%, rgba(0, 174, 199, 0.45), transparent 55%),
+    radial-gradient(circle at 110% 110%, rgba(106, 66, 183, 0.4), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.expositor-modal-content .modal-body {
+  position: relative;
+  z-index: 1;
+}
+
+.modal-close-x {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  color: #ffffff;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.55));
+  cursor: pointer;
+  line-height: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.modal-close-x:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+.modal-expositor-carousel .carousel-inner {
+  border-radius: 26px 26px 0 0;
+}
+
+.modal-img-placeholder {
+  height: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-family-base);
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--color-cyan), #0d3859);
+}
+
+.modal-img-placeholder[data-rubro="mineria"],
+.modal-img-placeholder[data-rubro="industria"] {
+  background: linear-gradient(135deg, var(--color-cyan), #0d3859);
+}
+
+.modal-img-placeholder[data-rubro="comercio"],
+.modal-img-placeholder[data-rubro="turismo"] {
+  background: linear-gradient(135deg, var(--color-purple-dark), #2a0046);
+}
+
+.modal-img-placeholder[data-rubro="agro"],
+.modal-img-placeholder[data-rubro="emprendedores"] {
+  background: linear-gradient(135deg, var(--color-lilac), var(--color-purple));
+}
+
+.modal-expositor-carousel .carousel-indicators.modal-carousel-indicators {
+  position: static;
+  margin: 10px 0 0 0;
+}
+
+.modal-expositor-carousel .carousel-indicators.modal-carousel-indicators [data-bs-target] {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  border: none;
+  opacity: 1;
+  margin: 0 3px;
+  transition: all 0.25s ease;
+}
+
+.modal-expositor-carousel .carousel-indicators.modal-carousel-indicators .active {
+  width: 20px;
+  border-radius: 9999px;
+  background-color: var(--color-cyan);
+}
+
+#modalExpositorRubro {
+  display: inline-flex;
+}
+
+.modal-text-panel {
+  position: relative;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 26px 26px;
+  padding: 1.1rem 1.3rem 1.3rem;
+}
+
+.modal-text-panel #modalExpositorNombre {
+  color: #0f172a;
+}
+
+.modal-text-panel #modalExpositorDescripcion {
+  color: #334155;
+  font-size: 0.88rem;
+}
+
+.modal-divider {
+  border: none;
+  height: 1px;
+  background: rgba(15, 23, 42, 0.12);
+  opacity: 1;
+}
+
+.modal-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--color-purple);
+}
+
+.modal-info-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.modal-info-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modal-info-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-purple);
+}
+
+.modal-info-value {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #475569;
+  overflow-wrap: break-word;
+}
+
+.modal-info-nota {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #64748b;
+}
+
+@media (max-width: 576px) {
+  .modal-info-grid.row-cols-2 > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
