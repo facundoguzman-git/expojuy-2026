@@ -1318,3 +1318,143 @@ section.expositores-section.content-section,
     max-width: 100%;
   }
 }
+
+/* =======================================================
+   SECCIÓN NOTICIAS (básico, a definir estilo final después)
+   ======================================================= */
+.noticia-card {
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.noticia-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.noticia-img-placeholder {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* =======================================================
+   SECCIÓN SPONSORS
+   ======================================================= */
+.sponsor-tier-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-purple);
+  margin-bottom: 0.75rem;
+}
+
+.sponsor-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 90px;
+  border: 1.5px dashed rgba(106, 66, 183, 0.35);
+  border-radius: 10px;
+  background: rgba(106, 66, 183, 0.04);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.sponsor-logo-box:hover {
+  border-color: rgba(106, 66, 183, 0.6);
+  background: rgba(106, 66, 183, 0.08);
+}
+
+.sponsor-tier-principal {
+  height: 130px;
+  font-size: 0.95rem;
+  border-color: rgba(0, 174, 199, 0.45);
+}
+
+.sponsor-tier-gold {
+  border-color: rgba(106, 66, 183, 0.4);
+}
+
+/* =======================================================
+   LOGO ORGANIZADOR (Cámara de Comercio Exterior de Jujuy)
+   ======================================================= */
+.footer-organiza {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-organiza-chip {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.footer-organiza-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.footer-organiza-texto {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.4;
+}
+
+.footer-organiza-texto strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* =======================================================
+   ÍCONOS DE REDES SOCIALES (nav + footer)
+   ======================================================= */
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-cyan);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(0, 174, 199, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon-link:hover {
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 174, 199, 0.35);
+}
+
+.nav-social-icons {
+  margin-left: auto;
+}
+
+.nav-social-icons .social-icon-link {
+  width: 32px;
+  height: 32px;
+}
