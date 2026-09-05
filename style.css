@@ -1290,3 +1290,119 @@ section.expositores-section.content-section,
     max-width: 100%;
   }
 }
+
+/* =======================================================
+   SECCIÓN ENTRADAS Y ACREDITACIONES (ESTILO VENTANAS MARINAS)
+   ======================================================= */
+.entradas-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #122240 0%, #0d172b 100%);
+  padding: 5rem 0;
+  z-index: 2;
+}
+
+/* Ventana principal contenedora (azul marino profundo) */
+.entradas-glass-card {
+  background: rgba(11, 20, 38, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 174, 199, 0.25);
+  border-radius: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.entradas-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-purple), var(--color-lilac));
+}
+
+.entrada-tipo-box {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+}
+
+.entrada-tipo-box:hover {
+  background: rgba(255, 255, 255, 0.07); /* Apenas un toque más claro, súper sutil */
+  border-color: rgba(0, 174, 199, 0.4); /* Borde cyan muy tenue */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.entrada-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(0, 174, 199, 0.15);
+  color: var(--color-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.entrada-price {
+  font-family: var(--font-family-base);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #8ef3ff;
+}
+
+/* Legibilidad perfecta en textos internos */
+.entrada-tipo-box h3 {
+  color: #ffffff !important;
+}
+
+.entrada-tipo-box p,
+.entrada-tipo-box span.text-muted {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Botones secundarios (Adquirir / Acreditarse) */
+.entrada-tipo-box .btn-outline-light,
+.entrada-tipo-box .btn-outline-dark {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: transparent !important;
+}
+
+.entrada-tipo-box .btn-outline-light:hover,
+.entrada-tipo-box .btn-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-color: #ffffff !important;
+}
+
+/* Botón principal inferior con brillo sutil y elegante */
+.btn-entrada-custom {
+  background-color: var(--color-cyan);
+  color: #ffffff;
+  font-family: var(--font-family-base);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 174, 199, 0.2);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-entrada-custom:hover {
+  background-color: #0096ab;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 174, 199, 0.35);
+}
