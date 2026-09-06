@@ -1,3 +1,6 @@
+/* ==========================================
+   1. ESTILOS GLOBALES Y VARIABLES
+   ========================================== */
 @font-face {
   font-family: 'Ambit';
   src: url('assets/fonts/Ambit-Light.otf') format('opentype');
@@ -59,47 +62,25 @@ main {
   background-color: transparent !important;
 }
 
-.glass-card,
-.plan-card,
-.expositor-card,
-.activity-card-wrapper {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-}
 
-.glass-card:hover,
-.plan-card:hover,
-.expositor-card:hover,
-.activity-card-wrapper:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(182, 133, 245, 0.5);
-  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.5);
-  transform: translateY(-4px);
-}
-
-.section-base {
-  position: relative;
-  overflow: hidden;
-  padding: 5rem 0;
-  z-index: 2;
-}
-
+/* ==========================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================== */
 .site-header {
-  position: absolute !important;
+  position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  background: transparent !important;
-  border-bottom: none !important;
-  box-shadow: none !important;
+  background: rgba(11, 8, 38, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
   z-index: 1030 !important;
+  transition: background 0.3s ease;
 }
+
+.site-header img { max-height: 38px !important; }
 
 .hamburguesa-btn {
   border: none !important;
@@ -151,9 +132,51 @@ main {
   font-weight: 700 !important;
 }
 
+.social-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  color: #cbd5e1;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+  cursor: pointer;
+}
+
+.social-icon-link:hover {
+  color: #ffffff;
+  transform: scale(1.15);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.nav-social-icons {
+  margin-left: auto;
+  padding-right: 0rem;
+  margin-right: 0rem;
+  gap: 1.2rem !important;
+}
+
+.nav-social-icons .social-icon-link svg {
+  color: #00AEC7;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-social-icons .social-icon-link:hover svg {
+  transform: translateY(-2px);
+}
+
 @media (min-width: 992px) {
   .site-header .container-fluid {
     position: relative !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .site-header #menuExpoJuy {
@@ -166,8 +189,76 @@ main {
     transform: translateX(-50%) !important;
     margin: 0 !important;
   }
+
+  .nav-social-icons {
+    margin-left: 0 !important;
+    position: absolute;
+    right: 1.5rem;
+  }
 }
 
+@media (max-width: 991px) {
+  .site-header img { max-height: 25px !important; }
+
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    background: rgba(11, 8, 38, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    padding-top: 0.8rem !important;
+    padding-bottom: 0.8rem !important;
+  }
+
+  .site-header .container-fluid {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar-brand {
+    margin-right: 0 !important;
+  }
+
+  .nav-social-icons {
+    display: flex !important;
+    position: static !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 0.8rem !important;
+  }
+
+  .hamburguesa-btn {
+    margin-left: 0 !important;
+  }
+
+  .navbar-collapse {
+    margin-top: 0.75rem;
+    padding: 1.2rem;
+    background: rgba(11, 8, 38, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+  }
+
+  .menu-navegacion {
+    gap: 0.6rem !important;
+  }
+
+  .menu-navegacion .nav-link:hover {
+    transform: scale(1.05) !important;
+  }
+}
+
+
+/* ==========================================
+   3. SECCIÓN HERO (PORTADA PRINCIPAL)
+   ========================================== */
 .hero-section {
   position: relative;
   overflow: hidden;
@@ -179,14 +270,20 @@ main {
   margin-bottom: 1px !important;
 }
 
-.hero-top-subtitle {
-  letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.65);
+.brand-hero-box {
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 0.5rem !important;
+}
+
+.brand-hero-svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .curved-gallery-container {
   perspective: 1400px;
-  overflow: hidden;
   padding: 1.3rem 0;
   width: 100%;
   display: flex;
@@ -199,7 +296,6 @@ main {
   align-items: center;
   justify-content: center;
   transform-style: preserve-3d;
-  padding: 0.5rem 1rem;
   width: 100%;
   max-width: 1450px;
 }
@@ -254,24 +350,6 @@ main {
   opacity: 1 !important;
 }
 
-@media (min-width: 992px) {
-  .curved-gallery-card {
-    flex: 0 0 175px;
-  }
-}
-
-.brand-hero-box {
-  width: 100%;
-  max-width: 420px;
-  margin-bottom: 0.5rem !important;
-}
-
-.brand-hero-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .hero-date-text {
   font-family: var(--font-family-base);
   font-size: clamp(2rem, 4.5vw, 3.8rem);
@@ -309,27 +387,101 @@ main {
   transform: translateY(-2px);
 }
 
-.content-section {
-  background-color: rgba(255, 255, 255, 0.82) !important;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px;
-  border: 1px solid rgba(226, 232, 240, 0.8) !important;
-  padding: 2rem 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+@media (min-width: 992px) {
+  .curved-gallery-card {
+    flex: 0 0 175px;
+  }
 }
 
-.content-section h2 {
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+@media (max-width: 991px) {
+  .hero-section {
+    min-height: auto !important;
+    padding-top: 6rem !important;
+    padding-bottom: 2rem !important;
+    justify-content: space-between !important;
+  }
+
+  .hero-top-container {
+    padding-top: 2.5rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .brand-hero-box {
+    max-width: 280px !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .curved-gallery-container {
+    padding: 1.10rem 0 !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .curved-gallery-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .curved-gallery-track {
+    padding: 0.25rem 0.5rem !important;
+    gap: 0.35rem !important;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .curved-gallery-card {
+    flex: 0 0 110px !important;
+    height: 175px !important;
+  }
+
+  .curved-gallery-track:active {
+    cursor: grabbing;
+  }
+
+  .curved-gallery-card:nth-child(-n+2),
+  .curved-gallery-card:nth-child(n+6) {
+    display: none !important;
+  }
+
+  .curved-gallery-card:nth-child(3) {
+    transform: rotateY(14deg) translateZ(-15px) !important;
+    transform-origin: right center !important;
+    opacity: 0.85 !important;
+  }
+
+  .curved-gallery-card:nth-child(4) {
+    transform: none !important;
+    z-index: 115 !important;
+    opacity: 1 !important;
+    scale: 1.08;
+  }
+
+  .curved-gallery-card:nth-child(5) {
+    transform: rotateY(-14deg) translateZ(-15px) !important;
+    transform-origin: left center !important;
+    opacity: 0.85 !important;
+  }
+
+  .hero-bottom-container {
+    padding-bottom: 0.5rem !important;
+    margin-top: 0rem !important;
+  }
+
+  .hero-date-text {
+    font-size: 2.2rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .hero-location-link {
+    font-size: 0.85rem !important;
+  }
 }
 
-.content-section p {
-  font-size: 0.9rem;
-}
 
+/* ==========================================
+   4. SECCIÓN SOBRE EXPOJUY
+   ========================================== */
 .sobre-expojuy-section {
   position: relative;
   overflow: hidden;
@@ -350,21 +502,6 @@ main {
   opacity: 0.22;
   pointer-events: none;
   z-index: 0;
-}
-
-.badge-sobre {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--color-purple);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 5px 14px;
-  border-radius: 9999px;
-  border: 1px solid rgba(106, 66, 183, 0.35);
-  box-shadow: 0 2px 8px rgba(106, 66, 183, 0.1);
 }
 
 .lema-subtitulo {
@@ -412,7 +549,6 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.slide-caption-box .slide-tag,
 .slide-tag {
   display: inline-flex !important;
   align-items: center !important;
@@ -462,6 +598,10 @@ main {
   z-index: 5;
 }
 
+
+/* ==========================================
+   5. SECCIÓN EXPOSITORES
+   ========================================== */
 .expositores-section {
   position: relative;
   overflow: hidden;
@@ -472,7 +612,6 @@ main {
   z-index: 2;
 }
 
-section.expositores-section.content-section,
 .expositores-section h2,
 .expositores-section h3,
 .expositores-section h4,
@@ -514,16 +653,6 @@ section.expositores-section.content-section,
 .expositores-section .container {
   position: relative;
   z-index: 1;
-}
-
-.expositores-contador {
-  font-weight: 600;
-  color: #cbd5e1;
-}
-
-.expositores-contador #contadorExpositores {
-  color: #ffffff;
-  font-weight: 800;
 }
 
 .expositores-buscador {
@@ -612,6 +741,14 @@ section.expositores-section.content-section,
 .expositor-card {
   height: 100%;
   padding: 1.1rem 1.25rem !important;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
   backface-visibility: hidden;
 }
@@ -662,22 +799,6 @@ section.expositores-section.content-section,
   line-height: 1.25;
 }
 
-.expositor-rubro-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  padding: 3px 10px;
-  border-radius: 6px;
-}
-
-.rubro-mineria, .rubro-industria { background: rgba(0, 174, 199, 0.3); color: #8ef3ff; border: 1px solid rgba(0, 174, 199, 0.5); }
-.rubro-comercio, .rubro-turismo { background: rgba(88, 0, 140, 0.4); color: #e2bfff; border: 1px solid rgba(182, 133, 245, 0.5); }
-.rubro-agro, .rubro-emprendedores { background: rgba(182, 133, 245, 0.3); color: #f0e6ff; border: 1px solid rgba(182, 133, 245, 0.5); }
-
 .expositor-link {
   font-size: 0.8rem;
   font-weight: 700;
@@ -701,17 +822,25 @@ section.expositores-section.content-section,
   transform: scale(0.96);
 }
 
-.expositores-section .badge-sobre {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff !important;
-  border: 1px solid rgba(0, 174, 199, 0.4);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+@media (max-width: 768px) {
+  .filtros-rubro {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .filtro-rubro-btn {
+    flex-shrink: 0;
+  }
 }
 
+
+/* ==========================================
+   6. SECCIÓN ACTIVIDADES
+   ========================================== */
 .activities-section {
-  background: linear-gradient(135deg, #b875f2 0%, #9552d0 50%, #6d2ea2 100%);
+  background: linear-gradient(90deg, #6b40a5 0%, #9063d2 50%, #b892f2 100%);
   position: relative;
   overflow: hidden;
   padding: 5rem 0;
@@ -731,8 +860,14 @@ section.expositores-section.content-section,
 }
 
 .activity-card-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
   box-shadow: 0 12px 40px rgba(40, 10, 70, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
 .activity-card-wrapper:hover {
@@ -792,7 +927,7 @@ section.expositores-section.content-section,
 .activity-toggle-btn[aria-expanded="true"] .activity-icon-arrow {
   transform: rotate(180deg);
   background: rgba(110, 40, 170, 0.6);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(210, 160, 255, 0.7);
   color: #ffffff;
 }
 
@@ -851,6 +986,56 @@ section.expositores-section.content-section,
   margin-bottom: 0;
 }
 
+
+/* ==========================================
+   7. SECCIÓN NOTICIAS Y NOVEDADES
+   ========================================== */
+.noticias-glass-section {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+  z-index: 2;
+  background: linear-gradient(90deg, #321054 0%, #4a1d7c 50%, #682eab 100%);
+}
+
+.noticias-glass-card {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.noticias-glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(182, 133, 245, 0.5);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+}
+
+.noticias-glass-card img.noticia-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 991px) {
+  .noticias-glass-card img.noticia-img {
+    height: 200px !important;
+  }
+}
+
+
+/* ==========================================
+   8. SECCIÓN PREDIO Y MAPA
+   ========================================== */
 .predio-section {
   background-color: #ffffff;
   position: relative;
@@ -934,115 +1119,57 @@ section.expositores-section.content-section,
   box-shadow: 0 6px 20px rgba(0, 174, 199, 0.4);
 }
 
-.entradas-section {
+
+/* ==========================================
+   9. SECCIÓN PATROCINADORES / SPONSORS
+   ========================================== */
+.sponsors-section {
   position: relative;
   overflow: hidden;
-  padding: 5rem 0;
+  background: linear-gradient(90deg, #111326 0%, #1a1e38 50%, #262c4f 100%);
   z-index: 2;
-  background: linear-gradient(135deg, #111122 0%, #4a1578 50%, #290b4a 100%);
 }
 
-.entradas-header-title {
-  color: #ffffff !important;
-}
-
-.entradas-header-subtitle {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.plan-card {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.plan-header {
-  padding: 2.2rem 1.5rem 1.2rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: center;
-}
-
-.plan-title {
-  font-family: var(--font-family-base);
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-
-.plan-body {
-  padding: 1.8rem 1.5rem;
-  flex-grow: 1;
-}
-
-.plan-features-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.plan-features-list li {
+.sponsor-circle-box {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 500;
-}
-
-.plan-features-list svg {
-  flex-shrink: 0;
-  stroke: var(--color-lilac) !important;
-}
-
-.plan-footer {
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  justify-content: center;
   text-align: center;
-}
-
-.plan-price {
-  font-family: var(--font-family-base);
-  font-size: 0.95rem;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(182, 133, 245, 0.3);
+  color: #0f172a;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--color-lilac);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
-.btn-plan-action {
-  display: block;
-  width: 100%;
-  background-color: var(--color-lilac);
-  color: #150324;
-  font-family: var(--font-family-base);
-  font-weight: 800;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 12px 20px;
-  border-radius: 9999px;
-  border: none;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(182, 133, 245, 0.3);
+.sponsor-circle-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.btn-plan-action:hover {
-  background-color: #c8a2f7;
-  color: #0f021c;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(182, 133, 245, 0.5);
+.sponsor-circle-box:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(182, 133, 245, 0.7);
+  color: #000000;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(182, 133, 245, 0.25);
 }
 
+
+/* ==========================================
+   10. MODAL DE EXPOSITORES
+   ========================================== */
 .modal-expositor-dialog {
   max-width: 580px;
 }
@@ -1108,7 +1235,7 @@ section.expositores-section.content-section,
   font-family: var(--font-family-base);
   font-size: 0.8rem;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--color-cyan), #0d3859);
+  background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
 }
 
 .modal-img-placeholder[data-rubro="mineria"],
@@ -1218,100 +1345,6 @@ section.expositores-section.content-section,
   color: #64748b;
 }
 
-@media (max-width: 991px) {
-  .site-header {
-    position: absolute !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-  .site-header .container-fluid {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-  .navbar-collapse {
-    margin-top: 0.75rem;
-    padding: 1.2rem;
-    background: rgba(11, 8, 38, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-  }
-  .menu-navegacion {
-    gap: 0.6rem !important;
-  }
-  .menu-navegacion .nav-link:hover {
-    transform: scale(1.05) !important;
-  }
-
-  .hero-section {
-    min-height: auto !important;
-    padding-top: 4.5rem !important;
-    padding-bottom: 2rem !important;
-    justify-content: space-between !important;
-  }
-  .hero-top-container {
-    padding-top: 0.5rem !important;
-    margin-bottom: 0rem !important;
-  }
-  .brand-hero-box {
-    max-width: 280px !important;
-    margin-bottom: 0.25rem !important;
-  }
-  .hero-top-subtitle {
-    font-size: 0.7rem !important;
-    margin-bottom: 0 !important;
-  }
-  .curved-gallery-container {
-    padding: 0.25rem 0 !important;
-  }
-  .curved-gallery-track {
-    padding: 0.25rem 0.5rem !important;
-    gap: 0.35rem !important;
-  }
-  .curved-gallery-card {
-    flex: 0 0 110px !important;
-    height: 175px !important;
-  }
-  .hero-bottom-container {
-    padding-bottom: 0.5rem !important;
-    margin-top: 0rem !important;
-  }
-  .hero-date-text {
-    font-size: 2.2rem !important;
-    margin-bottom: 0rem !important;
-  }
-  .hero-location-link {
-    font-size: 0.85rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .content-section {
-    padding: 1.5rem 1rem;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background-color: #ffffff !important;
-  }
-  .carousel-placeholder,
-  .block-placeholder {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background-color: #f8fafc !important;
-  }
-  .filtros-rubro {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    -webkit-overflow-scrolling: touch;
-  }
-  .filtro-rubro-btn {
-    flex-shrink: 0;
-  }
-}
-
 @media (max-width: 576px) {
   .modal-info-grid.row-cols-2 > * {
     flex: 0 0 100%;
@@ -1319,85 +1352,16 @@ section.expositores-section.content-section,
   }
 }
 
-/* =======================================================
-   SECCIÓN NOTICIAS (básico, a definir estilo final después)
-   ======================================================= */
-.noticia-card {
-  border: 1px solid var(--color-border, #e2e8f0);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
 
-.noticia-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
-}
-
-.noticia-img-placeholder {
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-}
-
-/* =======================================================
-   SECCIÓN SPONSORS
-   ======================================================= */
-.sponsor-tier-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: var(--color-purple);
-  margin-bottom: 0.75rem;
-}
-
-.sponsor-logo-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 90px;
-  border: 1.5px dashed rgba(106, 66, 183, 0.35);
-  border-radius: 10px;
-  background: rgba(106, 66, 183, 0.04);
-  color: #94a3b8;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.5rem;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.sponsor-logo-box:hover {
-  border-color: rgba(106, 66, 183, 0.6);
-  background: rgba(106, 66, 183, 0.08);
-}
-
-.sponsor-tier-principal {
-  height: 130px;
-  font-size: 0.95rem;
-  border-color: rgba(0, 174, 199, 0.45);
-}
-
-.sponsor-tier-gold {
-  border-color: rgba(106, 66, 183, 0.4);
-}
-
-/* =======================================================
-   LOGO ORGANIZADOR (Cámara de Comercio Exterior de Jujuy)
-   ======================================================= */
+/* ==========================================
+   11. PIE DE PÁGINA (FOOTER)
+   ========================================== */
 .footer-organiza {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-organiza-chip {
-  background: #ffffff;
+  background: #ffffff !important;
   border-radius: 12px;
   padding: 8px 14px;
   display: flex;
@@ -1422,39 +1386,4 @@ section.expositores-section.content-section,
 .footer-organiza-texto strong {
   color: #ffffff;
   font-weight: 700;
-}
-
-/* =======================================================
-   ÍCONOS DE REDES SOCIALES (nav + footer)
-   ======================================================= */
-.social-icon-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  color: var(--color-cyan);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1.5px solid rgba(0, 174, 199, 0.35);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.social-icon-link:hover {
-  background: linear-gradient(135deg, var(--color-cyan), var(--color-purple));
-  border-color: transparent;
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 174, 199, 0.35);
-}
-
-.nav-social-icons {
-  margin-left: auto;
-}
-
-.nav-social-icons .social-icon-link {
-  width: 32px;
-  height: 32px;
 }
