@@ -69,7 +69,7 @@
 
       <div class="curved-gallery-container w-100 position-relative my-2 reveal-scale">
         <div class="curved-gallery-track" id="curvedGalleryTrack">
-          <div class="curved-gallery-card"><img src="assets/expo1.jpeg" alt="Expo 1"><div class="gallery-card-label"><span>Inauguración</span></div></div>
+          <div class="curved-gallery-card"><img src="assets/expo1.jpeg" alt="Expo 1"><div class="gallery-card-label"><span>Espectáculo</span></div></div>
           <div class="curved-gallery-card"><img src="assets/expo2.jpeg" alt="Expo 2"><div class="gallery-card-label"><span>Artesanía</span></div></div>
           <div class="curved-gallery-card"><img src="assets/expo3.jpeg" alt="Expo 3"><div class="gallery-card-label"><span>Tecnología</span></div></div>
           <div class="curved-gallery-card"><img src="assets/expo4.jpeg" alt="Expo 4"><div class="gallery-card-label"><span>Comercio</span></div></div>
@@ -1116,34 +1116,100 @@
 
       const galleryTrack = document.getElementById('curvedGalleryTrack');
       if (galleryTrack) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+        const cards = Array.from(galleryTrack.querySelectorAll('.curved-gallery-card'));
+        const total = cards.length;
+        let activeIdx = Math.floor(total / 2);
+
+        const positionClasses = [
+          'pos-center',
+          'pos-left-1',
+          'pos-right-1',
+          'pos-left-2',
+          'pos-right-2',
+          'pos-left-3',
+          'pos-right-3',
+          'pos-hidden'
+        ];
+
+        function renderGallery() {
+          cards.forEach((card, i) => {
+            card.classList.remove(...positionClasses);
+            let diff = i - activeIdx;
+
+            if (diff > total / 2) diff -= total;
+            if (diff < -total / 2) diff += total;
+
+            if (diff === 0) card.classList.add('pos-center');
+            else if (diff === -1) card.classList.add('pos-left-1');
+            else if (diff === 1) card.classList.add('pos-right-1');
+            else if (diff === -2) card.classList.add('pos-left-2');
+            else if (diff === 2) card.classList.add('pos-right-2');
+            else if (diff === -3) card.classList.add('pos-left-3');
+            else if (diff === 3) card.classList.add('pos-right-3');
+            else card.classList.add('pos-hidden');
+          });
+        }
+
+        function nextSlide() {
+          activeIdx = (activeIdx + 1) % total;
+          renderGallery();
+        }
+
+        function prevSlide() {
+          activeIdx = (activeIdx - 1 + total) % total;
+          renderGallery();
+        }
+
+        cards.forEach((card, idx) => {
+          card.addEventListener('click', () => {
+            if (activeIdx !== idx) {
+              activeIdx = idx;
+              renderGallery();
+            }
+          });
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        galleryTrack.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        galleryTrack.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          touchEndY = e.changedTouches[0].screenY;
+          const deltaX = touchEndX - touchStartX;
+          const deltaY = touchEndY - touchStartY;
+
+          if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 35) {
+            if (deltaX < 0) nextSlide();
+            else prevSlide();
+          }
+        }, { passive: true });
+
+        let mouseStartX = 0;
+        let isMouseDown = false;
 
         galleryTrack.addEventListener('mousedown', (e) => {
-          isDown = true;
-          galleryTrack.style.cursor = 'grabbing';
-          startX = e.pageX - galleryTrack.offsetLeft;
-          scrollLeft = galleryTrack.scrollLeft;
+          isMouseDown = true;
+          mouseStartX = e.clientX;
         });
 
-        galleryTrack.addEventListener('mouseleave', () => {
-          isDown = false;
-          galleryTrack.style.cursor = 'grab';
+        window.addEventListener('mouseup', (e) => {
+          if (!isMouseDown) return;
+          isMouseDown = false;
+          const deltaX = e.clientX - mouseStartX;
+          if (Math.abs(deltaX) > 40) {
+            if (deltaX < 0) nextSlide();
+            else prevSlide();
+          }
         });
 
-        galleryTrack.addEventListener('mouseup', () => {
-          isDown = false;
-          galleryTrack.style.cursor = 'grab';
-        });
-
-        galleryTrack.addEventListener('mousemove', (e) => {
-          if (!isDown) return;
-          e.preventDefault();
-          const x = e.pageX - galleryTrack.offsetLeft;
-          const walk = (x - startX) * 2;
-          galleryTrack.scrollLeft = scrollLeft - walk;
-        });
+        renderGallery();
       }
 
       const modalDialog = document.querySelector('.modal-expositor-dialog');
